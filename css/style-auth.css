@@ -1,0 +1,15 @@
+
+/* Auth pages (login/register) */
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px dashed #cc00cc;
+    background-color: #fff0f5;
+}
+.auth-container input, .auth-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}

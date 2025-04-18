@@ -1,0 +1,12 @@
+
+/* Buttons */
+button {
+    background-color: #BADA55;
+    border: 3px dashed #ff0000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.05);
+}

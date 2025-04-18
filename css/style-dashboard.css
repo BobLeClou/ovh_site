@@ -1,0 +1,15 @@
+
+/* Dashboard styling */
+.dashboard-container {
+    margin: 40px auto;
+    max-width: 900px;
+    background-color: #e0ffe0;
+    padding: 20px;
+    border-radius: 10px;
+}
+.user-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
