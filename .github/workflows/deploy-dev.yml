@@ -1,0 +1,27 @@
+name: Deploy to OVH (www2)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  ftp-deploy:
+    name: Deploiement_FTP_auto_vers_www2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout_code
+        uses: actions/checkout@v3
+
+      - name: Deploy_via_FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_TARGET }}/
+          local-dir: ./  # envoie tout le contenu du repo
+          exclude: |
+            **/.git*
+            **/.github*
