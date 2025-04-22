@@ -31,6 +31,8 @@
 <br><a href="/goldenbook/goldenbook.php"><button>Accès rapide au Livre d'Or</button></a><br>
 
 <div id="content" class="container">
+  <p>Test fonctionnement github action</p>
+  <br>
   <h1>test</h1>
   <div class="button-group">
     <button onclick="afficherOui()">Oui</button>
