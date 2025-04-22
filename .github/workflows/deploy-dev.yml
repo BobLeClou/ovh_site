@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout_code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Deploy_via_FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
