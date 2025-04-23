@@ -1,13 +1,20 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
-    $id = (int)$_POST['id']; // Sécurise l'entrée
+    $id = (int)$_POST['id'];
 
-    $db = new SQLite3('/database/message.db');
-    $stmt = $db->prepare('DELETE FROM messages WHERE id = :id');
-    $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
-    $stmt->execute();
+    try {
+        $db = new PDO('sqlite:' . __DIR__ . '/../database/message.db');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $db->prepare('DELETE FROM messages WHERE id = :id');
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        // En dev tu peux afficher ou logger l'erreur :
+        // echo "Erreur suppression : " . $e->getMessage();
+    }
 }
 
-header('Location: /goldenbook/goldenbook.php'); // Retour à la page principale
+header('Location: /goldenbook/goldenbook.php');
 exit;
 ?>
