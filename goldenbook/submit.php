@@ -19,7 +19,12 @@ try {
         $stmt->execute();
     }
 
-    header("Location: /goldenbook/goldenbook.php");
+    header("Location: goldenbook.php");
     exit;
-    }
+} catch (PDOException $e) {
+    // Afficher l'erreur
+    echo "Erreur : " . $e->getMessage();
+    // Ou logger l'erreur
+    error_log("Erreur base de données : " . $e->getMessage());
+}
 ?>

@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+echo "Erreur suppression : " . $e->getMessage();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $id = (int)$_POST['id'];
 
@@ -9,12 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
         $stmt = $db->prepare('DELETE FROM messages WHERE id = :id');
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-    } catch (PDOException $e) {
-        // En dev tu peux afficher ou logger l'erreur :
-        // echo "Erreur suppression : " . $e->getMessage();
-    }
 }
 
-header('Location: /goldenbook/goldenbook.php');
+header('Location: goldenbook.php');
 exit;
+}
 ?>
