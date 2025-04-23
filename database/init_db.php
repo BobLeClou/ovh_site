@@ -18,6 +18,10 @@ try {
         texte TEXT NOT NULL,
         date DATETIME DEFAULT CURRENT_TIMESTAMP
     )");
+
+    $db_message->exec("INSERT INTO messages (nom, texte) VALUES 
+        ('Admin', 'Bienvenue sur notre site !')");
+
     echo "<div class='success'>✅ Base <strong>message.db</strong> créée (ou déjà existante).</div>";
 
     $db_user = new SQLite3(__DIR__ . '/user.db');
