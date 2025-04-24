@@ -37,7 +37,7 @@
 
   <div id="messages">
     <h2>Messages :</h2>
-    <?php include '/goldenbook/message.php'; ?>
+    <?php include __DIR__.'/message.php'; ?>
   </div>
 
   <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';?>
