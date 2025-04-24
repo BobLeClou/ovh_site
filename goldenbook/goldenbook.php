@@ -27,8 +27,8 @@
   <h1>Livre d'Or</h1>
 
   <form method="POST" action="/goldenbook/submit.php">
-    <input type="text" name="nom" placeholder="Nom" required><br>
-    <textarea name="texte" id="texte" placeholder="Message" rows="4" maxlength="250" required></textarea><br>
+    <input type="text" name="name" is="name" placeholder="Nom" required><br>
+    <textarea name="text" id="text" placeholder="Message" rows="4" maxlength="250" required></textarea><br>
     <div style="text-align: right; font-size: 12px; color: #333;">
       <span id="charCount">0 / 250</span>
     </div>

@@ -9,8 +9,8 @@ try {
     $db = new PDO('sqlite:' . __DIR__ . '/../database/message.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $nom = $_POST['nom'] ?? '';
-    $texte = $_POST['texte'] ?? '';
+    $nom = $_POST['name'] ?? '';
+    $texte = $_POST['text'] ?? '';
 
     if (trim($nom) && trim($texte)) {
         $stmt = $db->prepare('INSERT INTO messages (nom, texte) VALUES (:nom, :texte)');
